@@ -120,50 +120,7 @@
     };
     C(la, Error);
     la.prototype.name = "CustomError";
-    var ma,
-        D = function(a) {
-            return /^[\s\xa0]*$/.test(a)
-        },
-        na = function(a) {
-            return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, "")
-        },
-        wa = function(a) {
-            if (!oa.test(a)) return a; - 1 != a.indexOf("&") && (a = a.replace(pa, "&amp;")); - 1 != a.indexOf("<") && (a = a.replace(qa, "&lt;")); - 1 != a.indexOf(">") && (a = a.replace(ra, "&gt;")); - 1 != a.indexOf('"') && (a = a.replace(ta, "&quot;")); - 1 != a.indexOf("'") && (a = a.replace(ua, "&#39;")); - 1 != a.indexOf("\x00") && (a = a.replace(va, "&#0;"));
-            return a
-        },
-        pa = /&/g,
-        qa = /</g,
-        ra = />/g,
-        ta = /"/g,
-        ua = /'/g,
-        va = /\x00/g,
-        oa = /[\x00&<>"']/,
-        xa = String.prototype.repeat ? function(a, b) {
-            return a.repeat(b)
-        } : function(a, b) {
-            return Array(b + 1).join(a)
-        },
-        E = function(a) {
-            return null == a ? "" : String(a)
-        },
-        za = function(a, b) {
-            var c = 0;
-            a = na(String(a)).split(".");
-            b = na(String(b)).split(".");
-            for (var d = Math.max(a.length, b.length), e = 0; 0 == c && e < d; e++) {
-                var f = a[e] || "",
-                    h = b[e] || "";
-                do {
-                    f = /(\d*)(\D*)(.*)/.exec(f) || ["", "", "", ""];
-                    h = /(\d*)(\D*)(.*)/.exec(h) || ["", "", "", ""];
-                    if (0 == f[0].length && 0 == h[0].length) break;
-                    c = ya(0 == f[1].length ? 0 : parseInt(f[1], 10), 0 == h[1].length ? 0 : parseInt(h[1],
-                        10)) || ya(0 == f[2].length, 0 == h[2].length) || ya(f[2], h[2]);
-                    f = f[3];
-                    h = h[3]
-                } while (0 == c)
-            }
-            return c
+
         },
         ya = function(a, b) {
             return a < b ? -1 : a > b ? 1 : 0
