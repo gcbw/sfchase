@@ -120,8 +120,8 @@
     };
     C(la, Error);
     la.prototype.name = "CustomError";
-    var ma;
-    var D = function(a) {
+    var ma,
+        D = function(a) {
             return /^[\s\xa0]*$/.test(a)
         },
         na = function(a) {
